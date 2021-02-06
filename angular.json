@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -94,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "Karn"
+  "defaultProject": "Karn",
+  "cli": {
+    "analytics": "0bf184c9-ca7b-4370-b080-17ff3aa8f53b"
+  }
 }

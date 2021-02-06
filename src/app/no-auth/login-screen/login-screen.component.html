@@ -1,0 +1,141 @@
+<!-- 
+<div>
+  <h1 *ngIf="authService.user | async">
+    Welcome User: {{ (authService.user | async)?.email }}!
+  </h1>
+
+  <div *ngIf="!(authService.user | async)">
+    <input type="text" [(ngModel)]="email" placeholder="Enter email" />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Enter password"
+    />
+
+    <button (click)="signup()" [disabled]="!email || !password">Signup</button>
+
+    <button (click)="login()" [disabled]="!email || !password">Login</button>
+  </div>
+
+  <button (click)="logout()" *ngIf="authService.user | async">Logout</button>
+</div> -->
+<div class="container-fluid">
+  <div class="row height-in">
+    <div class="col-md-8 login__greyBox">
+      <img src="../../../assets/svg/login-v2.72cd8a26.svg" alt="" />
+    </div>
+    <div class="col-md-4 d-flex justify-content-center align-items-center">
+      <div class="card" *ngIf='!showSignUpScreen && !showForgotPasswordScreen'>
+        <h1>Welcome to karn! 👋</h1>
+        <p>Please sign-in to your account and start the adventure</p>
+        <div class="free_container">
+          <p><span>Admin:</span> admin@demo.com | admin</p>
+          <p>
+            <span>Client:</span> client@demo.com | client
+
+            <span>?</span>
+          </p>
+        </div>
+        <mat-form-field class="example-full-width mt-3" appearance="fill">
+          <mat-label>Email Id</mat-label>
+          <input [(ngModel)]="email" matInput placeholder="Email" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width mt-1" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            [(ngModel)]="password"
+            matInput
+            placeholder="Password"
+          />
+        </mat-form-field>
+        <span  (click)="showSignUpScreen =false; showForgotPasswordScreen = true; " class="forgotPassword">Forgot Password? </span>
+        <button mat-button color="primary" class="login__button" (click)="login()">Login</button>
+        <p class="newToplatform">New to our platform ? <span class="createAccount"  (click)="showSignUpScreen =!showSignUpScreen">Create an Account</span></p>
+     <div class="saperator">
+
+     </div>
+     <div class="iconContainer">
+      <img src="../../../assets/svg/facebook.svg" alt="">
+      <img src="../../../assets/svg/github (1).svg" alt="">
+      <img src="../../../assets/svg/google.svg" alt="">
+     
+     </div>
+      </div>
+      <div class="card" *ngIf='showSignUpScreen && !showForgotPasswordScreen'>
+        <h1>Tap your potential ! </h1>
+        <p>Manage your components 👋</p>
+      
+        <mat-form-field class="example-full-width mt-3" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input  matInput placeholder="Email" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width mt-1" appearance="fill">
+          <mat-label>Email Id</mat-label>
+          <input  matInput placeholder="Email" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width mt-1 " appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            [(ngModel)]="password"
+            matInput
+            placeholder="Password"
+          />
+        </mat-form-field>
+        <mat-checkbox class="example-margin">I agree the <span>Privacy Policies</span></mat-checkbox>
+ 
+     
+        <button mat-button color="primary" class="login__button" (click)="login()">Sign up</button>
+        <p class="newToplatform">Already having an account ?  <span class="createAccount"  (click)="showSignUpScreen =!showSignUpScreen">Sign in instead</span></p>
+     <div class="saperator">
+
+     </div>
+     <div class="iconContainer">
+      <img src="../../../assets/svg/facebook.svg" alt="">
+      <img src="../../../assets/svg/github (1).svg" alt="">
+      <img src="../../../assets/svg/google.svg" alt="">
+     
+     </div>
+      </div>
+      
+      <div class="card" *ngIf='showForgotPasswordScreen && !showSignUpScreen'>
+        <h1>Recover  </h1>
+        <p>Recover the password with email OTP</p>
+      
+        <mat-form-field class="example-full-width mt-3" appearance="fill">
+          <mat-label>EmailId</mat-label>
+          <input  matInput placeholder="Email" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width mt-1" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input  matInput placeholder="Email" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width mt-1 " appearance="fill">
+          <mat-label>OTP</mat-label>
+          <input
+            type="password"
+            [(ngModel)]="password"
+            matInput
+            placeholder="Password"
+          />
+        </mat-form-field>
+        <mat-checkbox class="example-margin">I agree the <span>Privacy Policies</span></mat-checkbox>
+ 
+     
+        <button mat-button color="primary" class="login__button" (click)="login()">Change Password</button>
+        <p class="newToplatform">Already having an account ?  <span class="createAccount"  (click)="showSignUpScreen =true; showForgotPasswordScreen = false; ">Sign in instead</span></p>
+     <div class="saperator">
+
+     </div>
+     <div class="iconContainer">
+      <img src="../../../assets/svg/facebook.svg" alt="">
+      <img src="../../../assets/svg/github (1).svg" alt="">
+      <img src="../../../assets/svg/google.svg" alt="">
+     
+     </div>
+      </div>
+
+    </div>
+  </div>
+</div>
