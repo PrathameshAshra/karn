@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row header__row">
+        <div class="col-md-11">
+            <h1>Welcome User</h1>
+
+        </div>
+        <div class="col-1">
+            <button>+</button>
+        </div>
+    </div>
+    <div class="row main__row mt-3">
+        <h3>List of Projects</h3>
+        <div class="col-md-4 projectCard__container" *ngFor="let item of ListOfProjects">
+            <app-project-card ></app-project-card>
+
+        </div>
+
+    </div>
+</div>
