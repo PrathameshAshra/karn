@@ -9,10 +9,11 @@ import { ProjectCardComponent } from './project-card/project-card.component';
   declarations: [ProjectCardComponent],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    
   ],
   exports:[
-    ProjectCardComponent
+    ProjectCardComponent,
   ]
 })
 export class SharedModule { }

@@ -5,6 +5,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LayoutComponent } from './layout/layout-page.component';
 import { DashboardComponent } from './dashboard/dashboard-page.component';
 import { SharedModule } from '../shared/shared.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../service/jwt_service';
 
 
 @NgModule({
@@ -14,6 +16,11 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
 
     AuthRoutingModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
   ]
 })
 export class AuthModule { }

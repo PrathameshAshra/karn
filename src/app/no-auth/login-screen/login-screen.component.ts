@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import  {AuthService}  from '../../service/auth.service';
+import { UserModel } from 'src/app/models/user.model';
+import {UserService  } from "../../service/user.service";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-screen',
@@ -11,27 +14,28 @@ export class LoginScreenComponent implements OnInit {
   password: string  ="";
   showSignUpScreen: boolean = false;
   showForgotPasswordScreen:boolean = false;
-constructor(public authService: AuthService){
+  UserModel: UserModel = new UserModel()
+   helper = new JwtHelperService();
 
+  constructor(
+    private userService :UserService,
+    private router: Router
+  ){
+
+  }
+login(){
+  this.UserModel.email = this.email
+  this.UserModel.password = this.password
+  this.UserModel.username = "this.password"
+  this.userService.createUser(this.UserModel).subscribe(
+    (data: any) => {
+      console.log(data.token)
+      localStorage.setItem('auth-token',data.token)
+      this.router.navigateByUrl("dashboard")
+
+    }
+  )
 }
-  signup() {
-    this.email.trim()
-    this.password.trim()
-    this.authService.signup(this.email, this.password);
-    this.email = this.password = '';
-  }
-
-  login() {
-    this.email.trim()
-    this.password.trim()
-    this.authService.login(this.email, this.password);
-    
-    // this.email = this.password = '';    
-  }
-
-  logout() {
-    this.authService.logout();
-  }
 
   ngOnInit() {
   }

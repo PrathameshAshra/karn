@@ -1,7 +1,10 @@
-export interface User {
-   uid: string;
-   email: string;
-   displayName: string;
-   photoURL: string;
-   emailVerified: boolean;
+export class UserModel {
+   _id!: string
+   username!: string;
+   githubLink!: string;
+   jobRole!: string;
+   email!: string;
+   password!: string;
+   createdAt!: Date;
+   isActive!: boolean;
 }
