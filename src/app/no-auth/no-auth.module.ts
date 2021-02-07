@@ -12,16 +12,13 @@ import {MatButtonModule} from '@angular/material/button';
 
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [LandingPageComponent, LoginScreenComponent,],
   imports: [
     CommonModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatRadioModule,
+    SharedModule,
     ReactiveFormsModule,
     NoAuthRoutingModule,
     MatButtonModule

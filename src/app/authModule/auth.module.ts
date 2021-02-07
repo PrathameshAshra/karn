@@ -5,10 +5,11 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LayoutComponent } from './layout/layout-page.component';
 import { DashboardComponent } from './dashboard/dashboard-page.component';
 import { SharedModule } from '../shared/shared.module';
+import { ProjectAddComponent } from './project-add/project-add.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent,DashboardComponent],
+  declarations: [LayoutComponent,DashboardComponent, ProjectAddComponent],
   imports: [
     CommonModule,
     SharedModule,
