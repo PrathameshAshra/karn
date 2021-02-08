@@ -7,10 +7,12 @@ import { DashboardComponent } from './dashboard/dashboard-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '../service/jwt_service';
+import { ProjectComponent } from './project/project-page.component';
+import { ProjectCreateComponent } from './projectCreateView/projectCreate.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent,DashboardComponent],
+  declarations: [LayoutComponent,ProjectCreateComponent,ProjectComponent,DashboardComponent],
   imports: [
     CommonModule,
     SharedModule,

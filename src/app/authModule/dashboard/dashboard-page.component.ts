@@ -9,32 +9,33 @@ import { async } from '@angular/core/testing';
   styleUrls: ['./dashboard-page.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  ListOfProjects = [1,2,3,4,5,6]
   ListOfProject = []
   UserModel: UserModel = new UserModel()
   constructor(
     private userService: UserService,
     private projectService:ProjectService
   ) { }
+
+
   async getLoggedInUser(){
   this.userService.me().subscribe(
    async (loggedInUser: any)=>{
       this.UserModel = await loggedInUser
       this.getProjectsByUserId()
-
     }
   )
 }
-getProjectsByUserId(){
+
+async getProjectsByUserId(){
   this.projectService.projectByUserId(this.UserModel._id).subscribe(
     async  (listOfProject: any) =>{
-      this.ListOfProject = listOfProject
+      this.ListOfProject =await listOfProject
 console.log(listOfProject)
     }
   )
 }
-  ngOnInit(): void {
-    this.getLoggedInUser()
-  }
+async  ngOnInit() {
+  this.getLoggedInUser()
+  }  
 
 }

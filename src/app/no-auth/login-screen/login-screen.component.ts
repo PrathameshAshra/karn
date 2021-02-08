@@ -23,7 +23,7 @@ export class LoginScreenComponent implements OnInit {
   ){
 
   }
-login(){
+signup(){
   this.UserModel.email = this.email
   this.UserModel.password = this.password
   this.UserModel.username = "this.password"
@@ -36,7 +36,15 @@ login(){
     }
   )
 }
+login(){
+  this.userService.login(this.UserModel).subscribe(
+    (data: any) => {
+      console.log(data.token)
+      localStorage.setItem('auth-token',data.token)
+      this.router.navigateByUrl("dashboard")
 
+    }
+  )}
   ngOnInit() {
   }
 
