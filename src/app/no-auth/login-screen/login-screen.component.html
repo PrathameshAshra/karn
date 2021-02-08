@@ -39,12 +39,15 @@
         <mat-form-field class="example-full-width mt-3" appearance="fill">
           <mat-label>Email Id</mat-label>
           <input [(ngModel)]="UserModel.email" matInput placeholder="Email" />
+
+          <input matInput placeholder="Email" />
         </mat-form-field>
         <mat-form-field class="example-full-width mt-1" appearance="fill">
           <mat-label>Password</mat-label>
           <input
             type="password"
             [(ngModel)]="UserModel.password"
+          
             matInput
             placeholder="Password"
           />
@@ -81,6 +84,7 @@
           <input
             type="password"
             [(ngModel)]="UserModel.password"
+
             matInput
             placeholder="Password"
           />
@@ -118,6 +122,9 @@
           <input
             type="text"
             [(ngModel)]="UserModel.email"
+
+            type="password"
+          
             matInput
             placeholder="OTP"
           />

@@ -5,6 +5,11 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { FormsModule } from '@angular/forms';
 
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -17,6 +22,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
   imports: [
     FormsModule,
     CommonModule,
+
     MatMenuModule,
     MatButtonModule,
     SharedRoutingModule,
@@ -35,6 +41,14 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule
-  ]
+
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    SharedRoutingModule
+  ],
+
 })  
 export class SharedModule { }

@@ -11,8 +11,11 @@ import { ProjectComponent } from './project/project-page.component';
 import { ProjectCreateComponent } from './projectCreateView/projectCreate.component';
 
 
+import { ProjectAddComponent } from './project-add/project-add.component';
+
+
 @NgModule({
-  declarations: [LayoutComponent,ProjectCreateComponent,ProjectComponent,DashboardComponent],
+  declarations: [LayoutComponent,ProjectCreateComponent,ProjectComponent,DashboardComponent,ProjectAddComponent],
   imports: [
     CommonModule,
     SharedModule,
