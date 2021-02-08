@@ -38,12 +38,15 @@
         </div>
         <mat-form-field class="example-full-width mt-3" appearance="fill">
           <mat-label>Email Id</mat-label>
+          <input [(ngModel)]="UserModel.email" matInput placeholder="Email" />
+
           <input matInput placeholder="Email" />
         </mat-form-field>
         <mat-form-field class="example-full-width mt-1" appearance="fill">
           <mat-label>Password</mat-label>
           <input
             type="password"
+            [(ngModel)]="UserModel.password"
           
             matInput
             placeholder="Password"
@@ -72,12 +75,16 @@
         </mat-form-field>
         <mat-form-field class="example-full-width mt-1" appearance="fill">
           <mat-label>Email Id</mat-label>
-          <input  matInput placeholder="Email" />
+          <input  type="text"
+          [(ngModel)]="UserModel.email"
+           matInput placeholder="Email" />
         </mat-form-field>
         <mat-form-field class="example-full-width mt-1 " appearance="fill">
           <mat-label>Password</mat-label>
           <input
             type="password"
+            [(ngModel)]="UserModel.password"
+
             matInput
             placeholder="Password"
           />
@@ -85,7 +92,7 @@
         <mat-checkbox class="example-margin">I agree the <span>Privacy Policies</span></mat-checkbox>
  
      
-        <button mat-button color="primary" class="login__button" (click)="login()">Sign up</button>
+        <button mat-button color="primary" class="login__button" (click)="signup()">Sign up</button>
         <p class="newToplatform">Already having an account ?  <span class="createAccount"  (click)="showSignUpScreen =!showSignUpScreen">Sign in instead</span></p>
      <div class="saperator">
 
@@ -104,19 +111,22 @@
       
         <mat-form-field class="example-full-width mt-3" appearance="fill">
           <mat-label>EmailId</mat-label>
-          <input  matInput placeholder="Email" />
+          <input  [(ngModel)]="UserModel.email" matInput placeholder="Email" />
         </mat-form-field>
         <mat-form-field class="example-full-width mt-1" appearance="fill">
           <mat-label>Password</mat-label>
-          <input  matInput placeholder="Email" />
+          <input   matInput placeholder="Email" />
         </mat-form-field>
         <mat-form-field class="example-full-width mt-1 " appearance="fill">
           <mat-label>OTP</mat-label>
           <input
+            type="text"
+            [(ngModel)]="UserModel.email"
+
             type="password"
           
             matInput
-            placeholder="Password"
+            placeholder="OTP"
           />
         </mat-form-field>
         <mat-checkbox class="example-margin">I agree the <span>Privacy Policies</span></mat-checkbox>

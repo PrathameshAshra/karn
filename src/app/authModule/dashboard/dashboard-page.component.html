@@ -5,13 +5,19 @@
 
         </div>
         <div class="col-1">
-            <button >New Project</button>
+            <button mat-icon-button color="primary"[matMenuTriggerFor]="menu"aria-label="Example icon button with a vertical three dot icon">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            <mat-menu #menu="matMenu">
+              <button routerLink='/project-create' mat-menu-item>Create Project</button>
+            </mat-menu>
+
         </div>
     </div>
     <div class="row main__row mt-3">
         <h3>List of Projects</h3>
-        <div class="col-md-4 projectCard__container" *ngFor="let item of ListOfProjects">
-            <app-project-card ></app-project-card>
+        <div class="col-md-4 projectCard__container"  *ngFor="let item of ListOfProject">
+            <app-project-card [ProjectCardConfig]='item' ></app-project-card>
 
         </div>
         <h3>Recent Changes</h3>
